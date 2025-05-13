@@ -14,7 +14,7 @@ public class InputFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) request;
-        if ("POST"/*.equalsIgnoreCase(req.getMethod())*/ != null) {
+        if ("POST".equalsIgnoreCase(req.getMethod())) {
             String user = req.getParameter("username");
             if (user == null || user.trim().isEmpty()) {
                 request.setAttribute("error", "Username không được để trống!");
