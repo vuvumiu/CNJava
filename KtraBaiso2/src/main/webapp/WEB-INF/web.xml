@@ -1,0 +1,28 @@
+<web-app xmlns="http://jakarta.ee/xml/ns/jakartaee" version="5.0">
+
+    <!-- Servlet xử lý đăng nhập -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.myapp.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <!-- Filter kiểm tra đầu vào -->
+    <filter>
+        <filter-name>InputFilter</filter-name>
+        <filter-class>com.myapp.InputFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>InputFilter</filter-name>
+        <url-pattern>/login</url-pattern>
+    </filter-mapping>
+
+    <!-- Listener theo dõi session -->
+    <listener>
+        <listener-class>com.myapp.SessionListener</listener-class>
+    </listener>
+
+</web-app>
